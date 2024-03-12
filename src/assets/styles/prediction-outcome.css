@@ -1,0 +1,63 @@
+.prediction-button {
+  width: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  background-color: #4B0082; 
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 30px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 8px; 
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.prediction-button:hover {
+  background-color: #4B0082; 
+  transform: scale(1.03); 
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.45), 0 15px 35px 0 rgba(0, 0, 0, 0.4); 
+}
+
+.table-container {
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  background-color: #4B0082; 
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 30px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.table-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.45), 0 15px 35px 0 rgba(0, 0, 0, 0.4);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse; 
+  background-color: #4B0082; 
+  color: #FFFFFF; /* White text for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; 
+  overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 15px; 
+  border: 1px solid #5C2D91; 
+  text-align: left; 
+  font-size: 16px; 
+}
+
+.custom-table thead th {
+  background-color: #6A359C; 
+  color: #E0D0E3; 
+  font-weight: bold; 
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #533A7B;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #5C2D91;
+  cursor: pointer; 
+}
