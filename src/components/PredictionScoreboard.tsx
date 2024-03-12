@@ -2,6 +2,7 @@ import { Button, Container, Row, Col, Table } from 'react-bootstrap';
 
 import { PlayerPrediction } from '../models/Prediction';
 import { Team } from '../models';
+import '../assets/styles/prediction-outcome.css';
 
 interface PredictionScoreboardProps {
   team: Team;
@@ -28,10 +29,10 @@ export const PredictionScoreboard: React.FC<PredictionScoreboardProps> = ({
 
   return (
     <Row>
-      <Col xs={12} style={{ marginTop: '20px' }}>
+      <Col xs={12} className="table-container">
         <h4 style={{ float: 'left' }}>{team.name}</h4>
         <h4 style={{ float: 'right' }}>{teamScore}</h4>
-        <Table striped bordered hover size="sm">
+        <Table striped bordered hover size="sm" className="custom-table">
           <thead>
             <tr>
               <th>Player</th>

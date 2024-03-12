@@ -6,6 +6,7 @@ import { PredictionService } from '../services';
 import { PredictionResults, PredictionRequest, PredictionRequestGenerator } from '../models';
 import { PredictionScoreboard } from './PredictionScoreboard';
 import { Button, Container, Row, Col } from 'react-bootstrap';
+import '../assets/styles/prediction-outcome.css';
 
 interface PredictionOutcomeHandlerProps {
   teamOneSelected: Team;
@@ -40,8 +41,8 @@ export const PredictionOutcomeHandler: React.FC<PredictionOutcomeHandlerProps> =
 
   return (
     <Container>
-      <Row>
-        <Button variant="danger" onClick={generatePrediction}>
+      <Row className="d-flex flex-row justify-content-around">
+        <Button className="prediction-button" onClick={generatePrediction}>
           Generate Prediction
         </Button>
       </Row>
