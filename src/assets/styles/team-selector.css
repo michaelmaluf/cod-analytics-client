@@ -1,0 +1,63 @@
+.component-base {
+  --color-default: #333;
+  --color-disabled: rgba(51, 51, 51, 0.5);
+  --color-active: #666;
+  --color-hover: #555;
+    color: #f5f5dc;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+
+.listing {
+  margin-bottom: 10px; 
+  height: 3rem;
+  background-color: var(--color-default);
+  transition: background-color 0.3s ease; 
+  color: #f5f5dc;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  gap: 1rem;
+}
+
+.listing:first-child {
+  margin-top: 10px; 
+}
+
+.listing.disabled {
+  background-color: var(--color-disabled);
+  pointer-events: none; 
+  color: #bfbfac;
+  opacity: 0.75; 
+}
+
+.listing.active, .listing:hover {
+  background-color: var(--color-active);
+  color: #f5f5dc;
+}
+
+/* Optionally, if you want a specific hover effect that transitions to the active color */
+.listing:not(.disabled):hover {
+  background-color: var(--color-hover);
+}
+
+
+.logo-size {
+  height: 75%; 
+  width: auto; 
+  max-width: 30%;
+}
+
+/* .team-listing {
+  margin-bottom: 10px; 
+  background-color: blueviolet;
+  height: 3rem;
+}
+
+.team-listing.disabled {
+  color: #6c757d; 
+  background-color: #e9e9e9; 
+  opacity: 0.65; 
+} */

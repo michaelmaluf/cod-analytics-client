@@ -1,0 +1,30 @@
+.custom-carousel {
+  height: '25vh';
+}
+
+.custom-carousel .carousel-item {
+  text-align: center; 
+}
+
+.custom-carousel .carousel-caption {
+  position: static; 
+  padding-top: 1rem; 
+}
+
+.custom-carousel img {
+  margin: auto; 
+  max-width: 90%; 
+}
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  width: 5%; /* Control the hit area for the arrows */
+}
+
+/* .custom-carousel .carousel-control-prev {
+  left: -5%; 
+}
+
+.custom-carousel .carousel-control-next {
+  right: -5%; 
+} */
