@@ -1,33 +1,43 @@
+import { mapImages } from '../assets/images';
+
 export interface Map {
   name: string;
+  image: string;
 }
 
-const mapOne: Map = {
-  name: 'Rio',
+export const mapOne: Map = {
+  name: 'Karachi',
+  image: mapImages.karachiMap,
 };
 
-const mapTwo: Map = {
+export const mapTwo: Map = {
   name: 'Highrise',
+  image: mapImages.highriseMap,
 };
 
-const mapThree: Map = {
+export const mapThree: Map = {
   name: 'Skidrow',
+  image: mapImages.skidrowMap,
 };
 
-const mapFour: Map = {
+export const mapFour: Map = {
   name: 'Invasion',
+  image: mapImages.invasionMap,
 };
 
-const mapFive: Map = {
+export const mapFive: Map = {
   name: 'Sub Base',
+  image: mapImages.subBaseMap,
 };
 
-const mapSix: Map = {
+export const mapSix: Map = {
   name: 'Terminal',
+  image: mapImages.terminalMap,
 };
 
-const mapSeven: Map = {
+export const mapSeven: Map = {
   name: 'Rio',
+  image: mapImages.rioMap,
 };
 
 export const maps = [mapOne, mapTwo, mapThree, mapFour, mapFive, mapSix, mapSeven];
