@@ -1,8 +1,8 @@
-import { Button, Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 
 import { PlayerPrediction } from '../models/Prediction';
 import { Team } from '../models';
-import '../assets/styles/prediction-outcome.css';
+import '../assets/styles/outcome-manager.css';
 
 interface PredictionScoreboardProps {
   team: Team;
@@ -28,23 +28,21 @@ export const PredictionScoreboard: React.FC<PredictionScoreboardProps> = ({
   };
 
   return (
-    <Row>
-      <Col xs={12} className="table-container">
-        <h4 style={{ float: 'left' }}>{team.name}</h4>
-        <h4 style={{ float: 'right' }}>{teamScore}</h4>
-        <Table striped bordered hover size="sm" className="custom-table">
-          <thead>
-            <tr>
-              <th>Player</th>
-              <th>Kills</th>
-              <th>Deaths</th>
-              <th>Damage</th>
-              <th>Objectives</th>
-            </tr>
-          </thead>
-          <tbody>{renderPlayerPredictions()}</tbody>
-        </Table>
-      </Col>
-    </Row>
+    <Container className="table-container" fluid style={{ '--team-color': team.color }}>
+      <h4 style={{ float: 'left', color: team.color }}>{team.name}</h4>
+      <h4 style={{ float: 'right', color: team.color }}>{teamScore}</h4>
+      <Table striped bordered hover size="sm" className="custom-table">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Kills</th>
+            <th>Deaths</th>
+            <th>Damage</th>
+            <th>Objectives</th>
+          </tr>
+        </thead>
+        <tbody>{renderPlayerPredictions()}</tbody>
+      </Table>
+    </Container>
   );
 };
