@@ -6,6 +6,7 @@ export interface GameMode {
   color: string;
   maps: Map[];
   image: string;
+  targetScore: number;
 }
 
 const Hardpoint: GameMode = {
@@ -13,6 +14,7 @@ const Hardpoint: GameMode = {
   color: 'Green',
   maps: [mapOne, mapThree, mapFour, mapFive, mapSeven],
   image: gameModeImages.hardpointGameMode,
+  targetScore: 250,
 };
 
 const SearchAndDestroy: GameMode = {
@@ -20,6 +22,7 @@ const SearchAndDestroy: GameMode = {
   color: 'Red',
   maps: [mapOne, mapTwo, mapFour, mapSix, mapSeven],
   image: gameModeImages.searchAndDestroyGameMode,
+  targetScore: 6,
 };
 
 const Control: GameMode = {
@@ -27,6 +30,7 @@ const Control: GameMode = {
   color: 'Blue',
   maps: [mapOne, mapTwo, mapFour],
   image: gameModeImages.controlGameMode,
+  targetScore: 3,
 };
 
 export const gameModes = [Hardpoint, SearchAndDestroy, Control];
