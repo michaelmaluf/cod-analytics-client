@@ -1,0 +1,16 @@
+.container-base {
+  width: auto; 
+  height: 100%;
+  max-width: 100%;
+  padding: 1rem 4rem; 
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.workflow-layout {
+  display: flex;
+  justify-content: center;
+}
