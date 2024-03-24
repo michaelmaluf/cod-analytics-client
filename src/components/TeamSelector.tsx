@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
 import { Container, ListGroup, Image } from 'react-bootstrap';
 
-import { GameMode, gameModes, Team, teams, Map, maps } from '../models';
+import { Team } from '../models';
 import '../assets/styles/team-selector.css';
 
 interface TeamSelectorProps {
@@ -28,6 +27,7 @@ export const TeamSelector: React.FC<TeamSelectorProps> = ({
             disabled={team.name === opponentSelected.name}
             onClick={() => onTeamSelection(team)}
             className="listing"
+            style={{ '--team-color': team.color }}
           >
             <Image className="logo-size" src={team.logo} rounded fluid />
             {team.name}
