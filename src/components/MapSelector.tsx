@@ -2,6 +2,7 @@ import { Carousel, Container, Image } from 'react-bootstrap';
 
 import { Map } from '../models';
 import '../assets/styles/carousel-styles.css';
+import '../assets/styles/utility-components.css';
 
 interface MapSelectorProps {
   onMapSelection: (selectedMap: Map) => void;
@@ -22,7 +23,7 @@ export const MapSelector: React.FC<MapSelectorProps> = ({
   };
 
   return (
-    <Container className="container-base">
+    <Container className="carousel-base">
       <Carousel
         className="custom-carousel d-flex align-items-center justify-content-center"
         activeIndex={mapIndex}
@@ -31,11 +32,11 @@ export const MapSelector: React.FC<MapSelectorProps> = ({
         indicators={false}
       >
         {mapOptions.map((map) => (
-          <Carousel.Item key={map.name} className="overflow-hidden text-white">
+          <Carousel.Item>
             <Image className="d-block w-100" src={map.image} alt={map.name} fluid />
-            <Carousel.Caption>
-              <h3 className="text-white">{map.name}</h3>
-            </Carousel.Caption>
+            <div className="map-name-caption">
+              <h3>{map.name}</h3>
+            </div>
           </Carousel.Item>
         ))}
       </Carousel>

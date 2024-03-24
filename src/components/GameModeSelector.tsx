@@ -21,7 +21,7 @@ export const GameModeSelector: React.FC<GameModeSelectorProps> = ({
   };
 
   return (
-    <Container className="container-base">
+    <Container className="carousel-base">
       <Carousel
         className="custom-carousel d-flex align-items-center justify-content-center"
         activeIndex={gameModeIndex}
@@ -32,7 +32,9 @@ export const GameModeSelector: React.FC<GameModeSelectorProps> = ({
       >
         {gameModeOptions.map((gameMode) => (
           <Carousel.Item key={gameMode.name} className="text-white">
-            <Image className="d-block w-100" src={gameMode.image} alt={gameMode.name} fluid />
+            <div className="carousel-item-container">
+              <Image className="d-block w-100" src={gameMode.image} alt={gameMode.name} fluid />
+            </div>
           </Carousel.Item>
         ))}
       </Carousel>
