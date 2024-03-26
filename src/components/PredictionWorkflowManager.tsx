@@ -30,7 +30,7 @@ export const PredictionWorkFlowManager = () => {
   const { data } = useQuery({
     queryKey: ['fetchPrediction', predictionRequest],
     queryFn: () => PredictionService.fetchPrediction(predictionRequest),
-    enabled: !!predictionRequest,
+    staleTime: 6 * 60 * 60 * 1000, // 6 hour stale time
   });
 
   const handleTeamOneSelection = (selectedTeam: Team) => {

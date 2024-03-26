@@ -32,7 +32,7 @@ export const MapSelector: React.FC<MapSelectorProps> = ({
         indicators={false}
       >
         {mapOptions.map((map) => (
-          <Carousel.Item>
+          <Carousel.Item key={map.name}>
             <Image className="d-block w-100" src={map.image} alt={map.name} fluid />
             <div className="map-name-caption">
               <h3>{map.name}</h3>
