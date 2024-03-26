@@ -1,5 +1,3 @@
-import { mapImages } from '../assets/images';
-
 export interface Map {
   name: string;
   image: string;
@@ -7,37 +5,37 @@ export interface Map {
 
 export const mapOne: Map = {
   name: 'Karachi',
-  image: mapImages.karachiMap,
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Karachi-map.webp`,
 };
 
 export const mapTwo: Map = {
   name: 'Highrise',
-  image: mapImages.highriseMap,
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Highrise-map.webp`,
 };
 
 export const mapThree: Map = {
   name: 'Skidrow',
-  image: mapImages.skidrowMap,
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Skidrow-map.webp`,
 };
 
 export const mapFour: Map = {
   name: 'Invasion',
-  image: mapImages.invasionMap,
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Invasion-map.webp`,
 };
 
 export const mapFive: Map = {
   name: 'Sub Base',
-  image: mapImages.subBaseMap,
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Subbase-map.webp`,
 };
 
 export const mapSix: Map = {
   name: 'Terminal',
-  image: mapImages.terminalMap,
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Terminal-map.webp`,
 };
 
 export const mapSeven: Map = {
   name: 'Rio',
-  image: mapImages.rioMap,
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Rio-map.webp`,
 };
 
 export const maps = [mapOne, mapTwo, mapThree, mapFour, mapFive, mapSix, mapSeven];

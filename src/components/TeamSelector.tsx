@@ -2,7 +2,6 @@ import { Container, ListGroup, Image, Row, Col, Card } from 'react-bootstrap';
 
 import { Player, Team } from '../models';
 import { useRosterInfo } from '../hooks';
-import { playerImages } from '../assets/images';
 import { getOrdinalNumber } from '../utils';
 import '../assets/styles/team-selector.css';
 
@@ -61,7 +60,10 @@ export const TeamSelector: React.FC<TeamSelectorProps> = ({
                         background: `url(${teamSelected.logo}) center center / cover no-repeat`,
                       }}
                     ></div>
-                    <Card.Img variant="top" src={playerImages[player.name.toLowerCase()]} />
+                    <Card.Img
+                      variant="top"
+                      src={`${import.meta.env.VITE_IMAGE_URL}/players/${player.name.toLowerCase()}.webp`}
+                    />
                   </div>
                   <h2 className="player-name">{player.name}</h2>
                   <div className="player-stats">
