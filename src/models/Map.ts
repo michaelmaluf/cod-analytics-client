@@ -38,4 +38,24 @@ export const mapSeven: Map = {
   image: `${import.meta.env.VITE_IMAGE_URL}/maps/Rio-map.webp`,
 };
 
-export const maps = [mapOne, mapTwo, mapThree, mapFour, mapFive, mapSix, mapSeven];
+export const mapEight: Map = {
+  name: '6 Star',
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/6Star-map.webp`,
+};
+
+export const mapNine: Map = {
+  name: 'Vista',
+  image: `${import.meta.env.VITE_IMAGE_URL}/maps/Vista-map.webp`,
+};
+
+export const maps = [
+  mapOne,
+  mapTwo,
+  mapThree,
+  mapFour,
+  mapFive,
+  mapSix,
+  mapSeven,
+  mapEight,
+  mapNine,
+];

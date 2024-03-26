@@ -1,4 +1,4 @@
-import { Map, mapOne, mapTwo, mapThree, mapFour, mapFive, mapSix, mapSeven } from './Map';
+import { Map, mapOne, mapTwo, mapFour, mapFive, mapSeven, mapEight, mapNine } from './Map';
 
 export interface GameMode {
   name: string;
@@ -11,7 +11,7 @@ export interface GameMode {
 const Hardpoint: GameMode = {
   name: 'Hardpoint',
   color: 'Green',
-  maps: [mapOne, mapThree, mapFour, mapFive, mapSeven],
+  maps: [mapOne, mapFive, mapSeven, mapEight, mapNine],
   targetScore: 250,
   objectiveKey: 'Hill Time',
 };
@@ -19,7 +19,7 @@ const Hardpoint: GameMode = {
 const SearchAndDestroy: GameMode = {
   name: 'Search & Destroy',
   color: 'Red',
-  maps: [mapOne, mapTwo, mapFour, mapSix, mapSeven],
+  maps: [mapOne, mapTwo, mapFour, mapSeven, mapEight],
   targetScore: 6,
   objectiveKey: 'First Bloods',
 };

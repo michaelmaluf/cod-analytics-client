@@ -11,7 +11,7 @@ const defaultOne: MapGameModePair = {
 };
 
 const defaultTwo: MapGameModePair = {
-  map: gameModes[1].maps[1],
+  map: gameModes[1].maps[4],
   gameMode: gameModes[1],
 };
 
@@ -21,12 +21,12 @@ const defaultThree: MapGameModePair = {
 };
 
 const defaultFour: MapGameModePair = {
-  map: gameModes[0].maps[1],
+  map: gameModes[0].maps[2],
   gameMode: gameModes[0],
 };
 
 const defaultFive: MapGameModePair = {
-  map: gameModes[1].maps[4],
+  map: gameModes[1].maps[1],
   gameMode: gameModes[1],
 };
 
