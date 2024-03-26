@@ -1,4 +1,3 @@
-import { PREDICTION_URL } from './const';
 import { PredictionResults, PredictionRequest } from '../models';
 
 export const PredictionService = {
@@ -13,7 +12,7 @@ export const PredictionService = {
       map: predictionRequest.map.name,
     });
 
-    const predictionUrlWithParams = PREDICTION_URL + `?${predictionParams}`;
+    const predictionUrlWithParams = import.meta.env.VITE_PREDICTION_URL + `?${predictionParams}`;
 
     const predictionResponse = await fetch(predictionUrlWithParams, {
       method: 'GET',
