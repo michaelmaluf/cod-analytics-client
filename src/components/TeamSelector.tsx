@@ -27,7 +27,7 @@ export const TeamSelector: React.FC<TeamSelectorProps> = ({
             disabled={team.name === opponentSelected.name}
             onClick={() => onTeamSelection(team)}
             className="listing"
-            style={{ '--team-color': team.color }}
+            style={{ '--team-color': team.color } as React.CSSProperties}
           >
             <Image className="logo-size" src={team.logo} rounded fluid />
             {team.name}

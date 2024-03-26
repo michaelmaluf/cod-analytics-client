@@ -28,7 +28,11 @@ export const PredictionScoreboard: React.FC<PredictionScoreboardProps> = ({
   };
 
   return (
-    <Container className="table-container" fluid style={{ '--team-color': team.color }}>
+    <Container
+      className="table-container"
+      fluid
+      style={{ '--team-color': team.color } as React.CSSProperties}
+    >
       <h4 style={{ float: 'left', color: team.color }}>{team.name}</h4>
       <h4 style={{ float: 'right', color: team.color }}>{teamScore}</h4>
       <Table striped bordered hover size="sm" className="custom-table">
