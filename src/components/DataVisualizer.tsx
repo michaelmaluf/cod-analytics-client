@@ -30,7 +30,9 @@ export const DataVisualizer: React.FC<DataVisualizerProps> = ({
 
   return (
     <Container className="d-flex justify-content-center flex-column align-items-center">
-      <h3 style={{ textAlign: 'center', color: 'white' }}>{dataKey}</h3>
+      <h3 style={{ textAlign: 'center', color: 'white' }} className="mb-3">
+        {dataKey}
+      </h3>
       <BarChart
         width={600}
         height={200}
