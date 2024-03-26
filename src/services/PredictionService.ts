@@ -16,9 +16,6 @@ export const PredictionService = {
 
     const predictionResponse = await fetch(predictionUrlWithParams, {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
     });
 
     if (!predictionResponse.ok) {

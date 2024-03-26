@@ -7,9 +7,6 @@ export const RosterService = {
 
     const rostersResponse = await fetch(rostersURL, {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
     });
 
     if (!rostersResponse.ok) {
