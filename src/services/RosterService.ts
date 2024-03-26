@@ -24,6 +24,13 @@ export const RosterService = {
 
     console.log(completeRosters);
 
+    // const camelCaseRosters = toCamelCase(rosters);
+
+    // const completeRosters = teams.map((team) => ({
+    //   ...team,
+    //   players: camelCaseRosters[team.name],
+    // }));
+
     return completeRosters;
   },
 };
