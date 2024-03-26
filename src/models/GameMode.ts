@@ -7,6 +7,7 @@ export interface GameMode {
   maps: Map[];
   image: string;
   targetScore: number;
+  objectiveKey: string;
 }
 
 const Hardpoint: GameMode = {
@@ -15,6 +16,7 @@ const Hardpoint: GameMode = {
   maps: [mapOne, mapThree, mapFour, mapFive, mapSeven],
   image: gameModeImages.hardpointGameMode,
   targetScore: 250,
+  objectiveKey: 'Hill Time',
 };
 
 const SearchAndDestroy: GameMode = {
@@ -23,6 +25,7 @@ const SearchAndDestroy: GameMode = {
   maps: [mapOne, mapTwo, mapFour, mapSix, mapSeven],
   image: gameModeImages.searchAndDestroyGameMode,
   targetScore: 6,
+  objectiveKey: 'First Bloods',
 };
 
 const Control: GameMode = {
@@ -31,6 +34,7 @@ const Control: GameMode = {
   maps: [mapOne, mapTwo, mapFour],
   image: gameModeImages.controlGameMode,
   targetScore: 3,
+  objectiveKey: 'Captures',
 };
 
 export const gameModes = [Hardpoint, SearchAndDestroy, Control];

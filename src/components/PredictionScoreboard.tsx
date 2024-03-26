@@ -8,12 +8,14 @@ interface PredictionScoreboardProps {
   team: Team;
   teamScore: number;
   playerPredictions: { [key: string]: PlayerPrediction };
+  objectiveKey: string;
 }
 
 export const PredictionScoreboard: React.FC<PredictionScoreboardProps> = ({
   team,
   teamScore,
   playerPredictions,
+  objectiveKey,
 }) => {
   const renderPlayerPredictions = () => {
     return Object.entries(playerPredictions).map(([playerName, stats]) => (
@@ -42,7 +44,7 @@ export const PredictionScoreboard: React.FC<PredictionScoreboardProps> = ({
             <th>Kills</th>
             <th>Deaths</th>
             <th>Damage</th>
-            <th>Objectives</th>
+            <th>{objectiveKey}</th>
           </tr>
         </thead>
         <tbody>{renderPlayerPredictions()}</tbody>

@@ -20,11 +20,13 @@ export const PredictionOutcomeManager = () => {
               team={predictionRequest.teamOne}
               teamScore={data.team_one_prediction}
               playerPredictions={data.team_one_player_predictions}
+              objectiveKey={predictionRequest.gameMode.objectiveKey}
             />
             <PredictionScoreboard
               team={predictionRequest.teamTwo}
               teamScore={data.team_two_prediction}
               playerPredictions={data.team_two_player_predictions}
+              objectiveKey={predictionRequest.gameMode.objectiveKey}
             />
             <Button className="custom-button" onClick={() => navigate(-1)}>
               Make New Prediction
