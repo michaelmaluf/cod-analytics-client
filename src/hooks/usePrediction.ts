@@ -1,7 +1,7 @@
 import { useQuery, useQueries } from '@tanstack/react-query';
 
 import { PredictionService } from '../services';
-import { MapGameModePair, PredictionRequest, PredictionRequestGenerator, Team } from '../models';
+import { MapGameModePair, PredictionRequest, Team } from '../models';
 
 export const usePrediction = (predictionRequest: PredictionRequest) => {
   const { data, isLoading } = useQuery({

@@ -27,10 +27,12 @@ body, html {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(to top right, #20003D, #4B0082);
+  overflow-y: auto;
+  background-image: linear-gradient(to top right, #20003D, #333333 80%, #4B0082);
+}
+
+tbody, td, tfoot, th, thead, tr {
+  border: none;
 }
 
 h1 {
