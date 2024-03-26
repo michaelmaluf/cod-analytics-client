@@ -31,4 +31,21 @@ export const PredictionService = {
 
     console.log(predictionResponse.json());
   },
+
+  calculateWinner(predictionResults: PredictionResults[]) {
+    let teamOneMapsWon = 0;
+    let teamTwoMapsWon = 0;
+    let predictionIndex = 0;
+
+    while (teamOneMapsWon < 3 && teamTwoMapsWon < 3) {
+      const currPrediction = predictionResults[predictionIndex];
+      if (currPrediction.team_one_prediction > currPrediction.team_two_prediction) {
+        ++teamOneMapsWon;
+      } else {
+        ++teamTwoMapsWon;
+      }
+      ++predictionIndex;
+    }
+    return [teamOneMapsWon, teamTwoMapsWon];
+  },
 };
