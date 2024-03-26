@@ -74,9 +74,9 @@ export const PredictionWorkFlowManager = () => {
   };
 
   return (
-    <Container className="container-base" fluid>
-      <Row className="workflow-layout">
-        <Col xs={12} md={3} className="pe-5">
+    <Container className="container-base mx-lg-2 px-lg-4 mx-xl-5 py-2 py-xl-4">
+      <Row className="workflow-layout mx-xxl-3">
+        <Col xs={12} md={4} lg={3} className="pe-lg-2 pe-xl-3">
           <TeamSelector
             onTeamSelection={handleTeamOneSelection}
             teamSelected={teamOneSelected}
@@ -85,7 +85,7 @@ export const PredictionWorkFlowManager = () => {
           />
         </Col>
         {/* Middle Container - Takes up 50% of the width */}
-        <Col xs={12} md={6} className="ps-5 pe-5 h-100 d-flex flex-column">
+        <Col xs={12} md={4} lg={6} className="px-md-2 px-md-5 d-flex flex-column">
           <GameModeSelector
             onGameModeSelection={handleGameModeSelection}
             gameModeSelected={gameModeSelected}
@@ -100,7 +100,7 @@ export const PredictionWorkFlowManager = () => {
             Generate Prediction
           </Button>
         </Col>
-        <Col xs={12} md={3} className="ps-5">
+        <Col xs={12} md={4} lg={3} className="ps-lg-2 ps-xl-3">
           <TeamSelector
             onTeamSelection={handleTeamTwoSelection}
             teamSelected={teamTwoSelected}

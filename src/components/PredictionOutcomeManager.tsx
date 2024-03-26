@@ -10,9 +10,9 @@ export const PredictionOutcomeManager = () => {
   const location = useLocation();
   const { data, predictionRequest } = location.state || {};
   const navigate = useNavigate();
-
+  // # margin on sides less and margin on top and bottom more when you get back, then done
   return (
-    <Container className="container-base" fluid>
+    <Container className="container-base px-2 py-4">
       {predictionRequest && data && (
         <Row className="justify-content-md-center">
           <Col xs={12} md={6} className="px-md-5 d-flex flex-column justify-content-start">

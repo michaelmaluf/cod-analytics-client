@@ -31,7 +31,6 @@ body, html {
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to top right, #20003D, #4B0082);
-  overflow: hidden;
 }
 
 h1 {

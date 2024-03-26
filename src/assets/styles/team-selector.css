@@ -5,11 +5,11 @@
   --color-hover: #555;
     color: #f5f5dc;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 1rem;
     background-color: #4B0082; 
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 30px 0 rgba(0, 0, 0, 0.35);
     border-radius: 8px; 
     transition: transform 0.5s ease, box-shadow 0.5s ease;
+    max-width: 300px;
 }
 
 .component-base:hover {

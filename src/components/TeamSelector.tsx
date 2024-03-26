@@ -17,7 +17,7 @@ export const TeamSelector: React.FC<TeamSelectorProps> = ({
   teamOptions,
 }) => {
   return (
-    <Container className="component-base">
+    <Container className="component-base px-lg-3 py-lg-2">
       <ListGroup>
         {teamOptions.map((team) => (
           <ListGroup.Item
