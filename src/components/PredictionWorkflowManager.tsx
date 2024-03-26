@@ -27,7 +27,7 @@ export const PredictionWorkFlowManager = () => {
   );
   const navigate = useNavigate();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['fetchPrediction', predictionRequest],
     queryFn: () => PredictionService.fetchPrediction(predictionRequest),
     staleTime: 6 * 60 * 60 * 1000, // 6 hour stale time
@@ -96,7 +96,7 @@ export const PredictionWorkFlowManager = () => {
             mapSelected={mapSelected}
             mapOptions={gameModeSelected.maps}
           />
-          <Button className="custom-button" onClick={generatePrediction}>
+          <Button className="custom-button" onClick={generatePrediction} disabled={isLoading}>
             Generate Prediction
           </Button>
         </Col>

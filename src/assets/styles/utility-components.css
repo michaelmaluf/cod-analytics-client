@@ -16,3 +16,10 @@
   transform: scale(1.03); 
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.45), 0 15px 35px 0 rgba(0, 0, 0, 0.4); 
 }
+
+.custom-button[disabled] {
+  background-color: #4B0082; 
+  color: #666;
+  border: 1px solid #999;
+  cursor: not-allowed;
+}
