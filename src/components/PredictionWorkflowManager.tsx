@@ -1,41 +1,28 @@
-import { useState, useMemo } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import Stepper from 'awesome-react-stepper';
 
-import { GameMode, gameModes, Team, teams, Map, PredictionRequestGenerator } from '../models';
+import { GameMode, Team, teams, Map, MapGameModePair, defaultMapSet } from '../models';
 import { TeamSelector } from './TeamSelector';
-import { GameModeSelector } from './GameModeSelector';
-import { MapSelector } from './MapSelector';
-import { PredictionService } from '../services';
+import { MapSetSelector } from './MapSetSelector';
+import { usePredictions } from '../hooks';
 import '../assets/styles/utility-components.css';
 import '../assets/styles/workflow-manager.css';
+import '../assets/styles/custom-stepper.css';
 
 export const PredictionWorkFlowManager = () => {
   const [teamOneSelected, setTeamOneSelected] = useState<Team>(teams[0]);
   const [teamTwoSelected, setTeamTwoSelected] = useState<Team>(teams[1]);
-  const [gameModeSelected, setGameModeSelected] = useState<GameMode>(gameModes[0]);
-  const [mapSelected, setMapSelected] = useState<Map>(gameModeSelected.maps[0]);
-  const predictionRequest = useMemo(
-    () => ({
-      teamOne: teamOneSelected,
-      teamTwo: teamTwoSelected,
-      gameMode: gameModeSelected,
-      map: mapSelected,
-    }),
-    [teamOneSelected, teamTwoSelected, gameModeSelected, mapSelected],
-  );
-  const navigate = useNavigate();
+  const [mapSet, setMapSet] = useState<MapGameModePair[]>(defaultMapSet);
+  const { data, isLoading } = usePredictions(teamOneSelected, teamTwoSelected, mapSet);
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['fetchPrediction', predictionRequest],
-    queryFn: () => PredictionService.fetchPrediction(predictionRequest),
-    staleTime: 6 * 60 * 60 * 1000, // 6 hour stale time
-  });
+  const navigate = useNavigate();
 
   const handleTeamOneSelection = (selectedTeam: Team) => {
     if (teamTwoSelected === selectedTeam) {
-      return;
+      const defaultTeamTwo = teams.find((team) => team.name != selectedTeam.name) || teams[0];
+      setTeamTwoSelected(defaultTeamTwo);
     }
     setTeamOneSelected(selectedTeam);
   };
@@ -47,68 +34,69 @@ export const PredictionWorkFlowManager = () => {
     setTeamTwoSelected(selectedTeam);
   };
 
-  const handleGameModeSelection = (selectedGameMode: GameMode) => {
-    setGameModeSelected(selectedGameMode);
-    if (!selectedGameMode.maps.some((map) => map.name === mapSelected.name)) {
-      setMapSelected(selectedGameMode.maps[0]);
-    }
+  const handlePairSelection = (mapNumber: number, map: Map, gameMode: GameMode) => {
+    const selectedMapGameModePair: MapGameModePair = { map, gameMode };
+    setMapSet((oldMapSet) => {
+      const newMapSet = [...oldMapSet];
+      newMapSet[mapNumber] = selectedMapGameModePair;
+      return newMapSet;
+    });
   };
 
-  const handleMapSelection = (selectedMap: Map) => {
-    setMapSelected(selectedMap);
-  };
-
-  const generatePrediction = () => {
-    const newPredictionRequest = new PredictionRequestGenerator(
-      teamOneSelected,
-      teamTwoSelected,
-      gameModeSelected,
-      mapSelected,
-    );
+  const viewPredictions = () => {
     navigate('/predictions', {
       state: {
         data: data,
-        predictionRequest: newPredictionRequest,
+        teamOne: teamOneSelected,
+        teamTwo: teamTwoSelected,
+        mapSet: mapSet,
       },
     });
   };
 
   return (
-    <Container className="container-base mx-lg-2 px-lg-4 mx-xl-5 py-2 py-xl-4">
-      <Row className="workflow-layout mx-xxl-3">
-        <Col xs={12} md={4} lg={3} className="pe-lg-2 pe-xl-3">
+    <Container className="workflow-base" fluid>
+      <Stepper
+        stroke={3}
+        strokeColor="#23043c"
+        fillStroke="#826bc8"
+        activeColor="#826bc8"
+        activeProgressBorder="3px solid #826bc8"
+        submitBtn={
+          <button disabled={isLoading} className="stepperBtn">
+            Submit
+          </button>
+        }
+        continueBtn={<button className="stepperBtn">Next</button>}
+        backBtn={<button className="stepperBtn">Back</button>}
+        onSubmit={() => viewPredictions()}
+      >
+        <Row className="workflow-layout mx-lg-1 mx-xl-2 mx-xxl-4">
           <TeamSelector
             onTeamSelection={handleTeamOneSelection}
             teamSelected={teamOneSelected}
-            opponentSelected={teamTwoSelected}
             teamOptions={teams}
+            flipUI={false}
           />
-        </Col>
-        {/* Middle Container - Takes up 50% of the width */}
-        <Col xs={12} md={4} lg={6} className="px-md-2 px-md-5 d-flex flex-column">
-          <GameModeSelector
-            onGameModeSelection={handleGameModeSelection}
-            gameModeSelected={gameModeSelected}
-            gameModeOptions={gameModes}
-          />
-          <MapSelector
-            onMapSelection={handleMapSelection}
-            mapSelected={mapSelected}
-            mapOptions={gameModeSelected.maps}
-          />
-          <Button className="custom-button" onClick={generatePrediction} disabled={isLoading}>
-            Generate Prediction
-          </Button>
-        </Col>
-        <Col xs={12} md={4} lg={3} className="ps-lg-2 ps-xl-3">
+        </Row>
+        <Row className="workflow-layout mx-lg-2 mx-xl-3 mx-xxl-5">
           <TeamSelector
             onTeamSelection={handleTeamTwoSelection}
             teamSelected={teamTwoSelected}
             opponentSelected={teamOneSelected}
             teamOptions={teams}
+            flipUI={true}
           />
-        </Col>
-      </Row>
+        </Row>
+        <Row className="workflow-layout mx-lg-2 px-lg-4 mx-xl-5 pt-1 pb-5">
+          <MapSetSelector
+            teamOne={teamOneSelected}
+            teamTwo={teamTwoSelected}
+            mapSet={mapSet}
+            onPairSelection={handlePairSelection}
+          />
+        </Row>
+      </Stepper>
     </Container>
   );
 };
