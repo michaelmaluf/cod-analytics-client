@@ -19,7 +19,7 @@ export const PredictionOutcomeManager = () => {
   const mapPredictions = data.slice(0, teamOneMapsWon + teamTwoMapsWon);
 
   return (
-    <Container className="container-base px-2 py-4" fluid>
+    <Container className="container-base px-5 py-4" fluid>
       <MatchOverview
         teamOne={teamOne}
         teamTwo={teamTwo}
