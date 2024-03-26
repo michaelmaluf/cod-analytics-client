@@ -1,1 +1,1 @@
-export const PREDICTION_URL = 'http://localhost/predictions';
+export const PREDICTION_URL = 'http://127.0.0.1:5001/predictions';
