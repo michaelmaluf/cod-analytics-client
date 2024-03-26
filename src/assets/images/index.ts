@@ -53,3 +53,22 @@ export const gameModeImages = {
   searchAndDestroyGameMode,
   controlGameMode,
 };
+
+// import.meta.glob - Vite feature that simplifies dynamic import of moduels & assets
+
+const players = import.meta.glob('./players/*.{png,jpg,jpeg,PNG,JPEG,webp}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+
+// Transforming the object into a more usable format
+export const playerImages = Object.entries(players).reduce(
+  (acc: Record<string, string>, [path, url]) => {
+    // Extract a meaningful key from the file path
+    const name = path.split('/').pop()?.split('.')[0] ?? '';
+    acc[name] = url as string;
+    return acc;
+  },
+  {},
+);
