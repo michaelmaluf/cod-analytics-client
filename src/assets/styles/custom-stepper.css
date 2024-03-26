@@ -1,0 +1,57 @@
+.progress {
+  --bs-progress-height: auto;
+  --bs-progress-font-size: 1rem; 
+  --bs-progress-bg: transparent; 
+  --bs-progress-border-radius: 0; 
+  --bs-progress-box-shadow: none; 
+  --bs-progress-bar-color: initial; 
+  --bs-progress-bar-bg: transparent; 
+  --bs-progress-bar-transition: none; 
+  display: block;
+  height: auto; 
+  overflow: visible;
+  font-size: 1rem; 
+  background-color: transparent; 
+  border-radius: 0;
+}
+
+
+
+.progressBarDiv {
+  margin: 1rem 15rem 2em 15rem;
+}
+
+.progressBarDiv .progress * {
+  box-sizing: content-box;
+}
+
+
+.stepperBtn {
+  color: #ad95f4; 
+  width: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 5rem;
+  margin: 1rem 3rem;
+  border-radius: 10px;
+  background: #53138a;
+  box-shadow: inset 35px 35px 70px #0c0114,
+              inset -35px -35px 70px #240540;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  font-size: large;
+  font-weight: 700;
+}
+
+.stepperBtn:hover {
+  transform: scale(1.03); 
+  background: #18032a;
+  box-shadow: inset 35px 35px 69px #0d0218,
+              inset -35px -35px 69px #23043c;
+  border-color: #ad95f4;
+}
+
+.stepperBtn[disabled] {
+  background-color: #1d042e; 
+  color: #666;
+  border: 1px solid #999;
+  cursor: not-allowed;
+}
