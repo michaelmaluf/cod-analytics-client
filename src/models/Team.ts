@@ -4,6 +4,7 @@ export interface Team {
   name: string;
   logo: string;
   color: string;
+  players?: string[];
 }
 
 const teamOne: Team = {

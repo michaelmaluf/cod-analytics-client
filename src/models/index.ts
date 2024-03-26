@@ -6,3 +6,5 @@ export { teams } from './Team';
 export { gameModes } from './GameMode';
 export { maps } from './Map';
 export { PredictionRequestGenerator } from './Prediction';
+export type { MapGameModePair } from './MapGameModePair';
+export { defaultMapSet } from './MapGameModePair';
