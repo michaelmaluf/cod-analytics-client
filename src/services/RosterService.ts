@@ -1,4 +1,5 @@
 import { teams } from '../models';
+import { convertToCamelCase } from '../utils';
 
 export const RosterService = {
   async fetchRosters() {
@@ -19,17 +20,10 @@ export const RosterService = {
 
     const completeRosters = teams.map((team) => ({
       ...team,
-      players: rosters[team.name],
+      players: convertToCamelCase(rosters[team.name]),
     }));
 
     console.log(completeRosters);
-
-    // const camelCaseRosters = toCamelCase(rosters);
-
-    // const completeRosters = teams.map((team) => ({
-    //   ...team,
-    //   players: camelCaseRosters[team.name],
-    // }));
 
     return completeRosters;
   },
