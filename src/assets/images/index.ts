@@ -26,13 +26,13 @@ export const logos = {
   legionLogo,
 };
 
-import invasionMap from './maps/Invasion-map.jpeg';
-import karachiMap from './maps/Karachi-map.jpeg';
-import subBaseMap from './maps/Subbase-map.jpeg';
+import invasionMap from './maps/Invasion-map.webp';
+import karachiMap from './maps/Karachi-map.webp';
+import subBaseMap from './maps/Subbase-map.webp';
 import skidrowMap from './maps/Skidrow-map.webp';
 import highriseMap from './maps/Highrise-map.webp';
-import rioMap from './maps/Rio-map.jpeg';
-import terminalMap from './maps/Terminal-map.jpeg';
+import rioMap from './maps/Rio-map.webp';
+import terminalMap from './maps/Terminal-map.webp';
 
 export const mapImages = {
   invasionMap,
