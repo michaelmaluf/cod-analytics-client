@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# COD Analytics Predictor Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Link to application](https://codanalyticspredictor.com)
 
-Currently, two official plugins are available:
+## Introduction
+This project serves as the frontend for the COD Analytics Predictor application. The purpose of this web client is to present predictions for Call of Duty matches to users, leveraging data processed by Gradient Boosting Machines and served by the backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Interactive UI for displaying match predictions.
+- Diverse choices for making predictions across all teams, maps, and game modes in the Call of Duty League
+- Integration with the COD Analytics Predictor Server for real-time data fetching.
+- Responsive design for optimal viewing.
 
-## Expanding the ESLint configuration
+## Prerequisites
+Before you start, ensure you have the following installed:
+- Node.js 14.x or above.
+- npm for managing packages.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
+Clone the repository and navigate into the project directory:
+- git clone https://github.com/yourusername/cod-analytics-predictor-client.git
+- cd cod-analytics-predictor-client
 
-- Configure the top-level `parserOptions` property like this:
+### Install Dependencies
+To set up your environment and install required dependencies, follow these steps:
+1. Install the required node packages via npm install.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Configuration
+Create a .env file that replicates .env.example and fill all values.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+- npm run dev (visit http://localhost:5173/ to view the application)
+- select the teams from the left and right hand sides, select the game mode and map from the carousels in the middle
+- click on Generate Predictions to view the results tailored to the selections you made
+
+## License
+This project is licensed under the MIT License.
