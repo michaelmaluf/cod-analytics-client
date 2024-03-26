@@ -5,7 +5,7 @@
 }
 
 .carousel-base:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .custom-carousel {
@@ -108,7 +108,7 @@
   height: auto;
   width: 100%;
   max-width: 350px;
-  padding: 2rem 1rem;
+  padding: 2rem 0.8rem;
   border-radius: 30px;
   /* background: linear-gradient(145deg, #1d0f28 0%, #2f3360 50%, rgb(147, 200, 82) 150%);
   border: 0.5px solid rgb(147, 200, 82); */

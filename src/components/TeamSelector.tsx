@@ -25,12 +25,12 @@ export const TeamSelector: React.FC<TeamSelectorProps> = ({
   const selectedRoster = rosterInfo?.find((roster) => roster.name == teamSelected?.name);
   return (
     <Container
-      className="team-selector-container px-lg-3 py-lg-3"
+      className="team-selector-container px-lg-1 py-lg-3"
       style={{ '--team-color': teamSelected.color } as React.CSSProperties}
       fluid
     >
       <Row className={`${flipUI ? 'flex-row-reverse' : ''} justify-content-around`}>
-        <Col md={4} className="team-selector-col">
+        <Col xs={4} className="team-selector-col">
           <ListGroup>
             {teamOptions.map((team) => (
               <ListGroup.Item
@@ -48,10 +48,10 @@ export const TeamSelector: React.FC<TeamSelectorProps> = ({
             ))}
           </ListGroup>
         </Col>
-        <Col md={8} className="player-display-col">
+        <Col xs={8} className="player-display-col">
           <Row className="h-100 py-5">
             {selectedRoster?.players.map((player: Player) => (
-              <Col key={player.name} xs={1} md={3} className="g-4">
+              <Col key={player.name} xs={3} className="g-4">
                 <Card className="player-card">
                   <div className="player-headshot">
                     <div

@@ -79,7 +79,7 @@ export const PredictionWorkFlowManager = () => {
             flipUI={false}
           />
         </Row>
-        <Row className="workflow-layout mx-lg-2 mx-xl-3 mx-xxl-5">
+        <Row className="workflow-layout mx-lg-1 mx-xl-2 mx-xxl-4">
           <TeamSelector
             onTeamSelection={handleTeamTwoSelection}
             teamSelected={teamTwoSelected}

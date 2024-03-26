@@ -27,6 +27,7 @@ body, html {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  overflow-x: auto;
   overflow-y: auto;
   background-image: linear-gradient(to top right, #20003D, #333333 80%, #4B0082);
 }

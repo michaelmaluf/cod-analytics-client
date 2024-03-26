@@ -21,7 +21,7 @@ export const MapSetSelector: React.FC<MapSetSelectorProps> = ({
   return (
     <Tab.Container defaultActiveKey="map1">
       <Row className="align-items-start justfiy-content-center pt-2">
-        <Col className="team-showcase-col mt-4 me-2">
+        <Col className="team-showcase-col mt-2 me-3">
           <div
             className="team-showcase"
             style={{
@@ -54,7 +54,7 @@ export const MapSetSelector: React.FC<MapSetSelectorProps> = ({
             ))}
           </Tab.Content>
         </Col>
-        <Col className="team-showcase-col mt-4 ms-2">
+        <Col className="team-showcase-col mt-2 ms-3">
           <div
             className="team-showcase"
             style={{
