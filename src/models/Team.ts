@@ -1,10 +1,17 @@
 import { logos } from '../assets/images';
 
+export interface Player {
+  name: string;
+  hardpointRank: number;
+  searchAndDestroyRank: number;
+  controlRank: number;
+}
+
 export interface Team {
   name: string;
   logo: string;
   color: string;
-  players?: string[];
+  players?: Player[];
 }
 
 const teamOne: Team = {

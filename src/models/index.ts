@@ -1,4 +1,4 @@
-export type { Team } from './Team';
+export type { Team, Player } from './Team';
 export type { GameMode } from './GameMode';
 export type { Map } from './Map';
 export type { PredictionResults, PredictionRequest } from './Prediction';
